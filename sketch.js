@@ -15,10 +15,32 @@ let emotionColors = {
 
 let currentEmotion = "joy"; 
 
+let music;
+let click;
+
+
+function preload (){
+  music = loadSound("sound/background-sound.mp3");
+  click = loadSound("sound/click.mp3");
+}
+
 function setup() {
+
+  const startButton = document.getElementById('startButton');
+  startButton.addEventListener('click', () => {
+    
+    music.setLoop(true);
+    music.play();
+
+    
+    document.getElementById('preloader').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+  });
+
   createCanvas(3600, 400);
   background(233);
 
+  
   
   const selectContainer = document.getElementById("select-container");
   const select = createSelect();
@@ -29,10 +51,16 @@ function setup() {
   
   select.changed(() => {
     currentEmotion = select.value();
+    click.play()
     drawPalettes(); 
   });
 
   drawPalettes(); 
+}
+
+
+function draw(){
+  
 }
 
 function drawPalettes() {
@@ -52,4 +80,5 @@ function drawPalettes() {
       rect(x, yStart + row * rectHeight, rectWidth, rectHeight);
     }
   }
+
 }

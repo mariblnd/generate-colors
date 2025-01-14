@@ -8,6 +8,14 @@
 
   </head>
   <body>
+
+    <div id="preloader">
+      <div class="blob"></div>
+      <h1>Coloured Emotions</h1>
+      <p>Explore different emotions through colors. <br>Choose an emotion and enjoy the visual experience.</p>
+      <button id="startButton">Start</button>
+    </div>
+
     <main>
       <h1>Coloured Emotions</h1>
         <p>Let's choose an emotion : </p>
@@ -18,4 +26,18 @@
     </main>
     <script src="sketch.js"></script>
   </body>
+  <script>
+    const blob = document.querySelector('.blob');
+    let hue = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      const preloader = document.getElementById('preloader');
+      if (preloader.style.display !== 'none') {
+        const { clientX, clientY } = e;
+        blob.style.left = `${clientX - 75}px`;
+        blob.style.top = `${clientY - 75}px`;
+      }
+    });
+
+  </script>
 </html>
