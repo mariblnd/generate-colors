@@ -26,7 +26,7 @@ function setup() {
     document.getElementById("mainContent").style.display = "block";
   });
 
-  createCanvas(3600, 400);
+  createCanvas(4800, 400);
 
   const selectContainer = document.getElementById("select-container");
 
@@ -66,10 +66,9 @@ function handleCheckboxChange(concept, isChecked) {
 }
 
 function drawPalettes() {
-  background(233);
   palettes = []; // Réinitialiser les palettes
 
-  let rectSize = 120; // Taille d'une palette
+  let rectSize = 200; // Taille d'une palette
   let gap = 30; // Espacement entre les palettes
   let xStart = 50; // Position de départ horizontale
   let yCenter = height / 2 - rectSize / 2; // Centrer les palettes verticalement
@@ -112,6 +111,7 @@ function drawPalette(palette) {
 
   for (let i = 0; i < 4; i++) {
     fill(palette.colors[i]);
+    noStroke();
     rect(
       palette.x + i * margin / 2, // Décalage pour chaque carré plus petit
       palette.y + i * margin / 2,
