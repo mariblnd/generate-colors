@@ -1,8 +1,22 @@
+
+@font-face {
+  font-family: 'Inter'; 
+  src: url(font/Inter_24pt-Regular.ttf);
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Inter';
   }
-  canvas {
-    display: block;
-  }
+
+main {
+  margin:2em;
+}
+
+canvas {
+  margin : 2em 0;
+  display: block;
+}
   
