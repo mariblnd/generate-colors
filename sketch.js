@@ -122,6 +122,7 @@ function drawPalette(palette) {
 }
 
 function mousePressed() {
+  click.play();
   palettes.forEach((palette) => {
     if (
       mouseX > palette.x &&
@@ -131,7 +132,7 @@ function mousePressed() {
     ) {
       palette.colors = shuffle(palette.colors); // Mélanger les couleurs
       drawPalette(palette); // Redessiner la palette
-      click.play();
+      
     }
   });
 }
