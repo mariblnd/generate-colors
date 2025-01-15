@@ -5,6 +5,7 @@ let conceptHSLRanges = {
   bright: { hue: [40, 90], saturation: [80, 100], lightness: [60, 80] },
   cold: { hue: [180, 220], saturation: [50, 80], lightness: [60, 80] },
   warm: { hue: [0, 40], saturation: [70, 100], lightness: [50, 70] },
+  wet: { hue: [150, 200], saturation: [10, 50], lightness: [30, 50] },
 };
 
 let selectedConcepts = [];
@@ -93,7 +94,7 @@ function generatePaletteColors() {
     let colors2 = Array(2).fill().map(() => generateHSLColor(selectedConcepts[1]));
     return shuffle([...colors1, ...colors2]);
   } else {
-    return [color(0, 0, 80), color(0, 0, 60), color(0, 0, 40), color(0, 0, 20)]; // Gris par défaut
+    return [color(255,255,255), color(255,255,255), color(255,255,255), color(255,255,255)]; // Blanc par défaut
   }
 }
 
@@ -107,7 +108,7 @@ function generateHSLColor(concept) {
 
 function drawPalette(palette) {
   let size = palette.size;
-  let margin = size * 0.15; // Marge entre les carrés imbriqués
+  let margin = size * 0.25; // Marge entre les carrés imbriqués
 
   for (let i = 0; i < 4; i++) {
     fill(palette.colors[i]);
