@@ -1,17 +1,5 @@
 // Nous stockons les concepts ainsi que leurs HSL & termes associés
 let conceptHSLRanges = {
-  passive: { 
-    hue: [180, 240], 
-    saturation: [10, 30], 
-    lightness: [70, 90],
-    words: ['tranquil', 'serene', 'gentle', 'quiet', 'calm']
-  },
-  active: { 
-    hue: [0, 60], 
-    saturation: [70, 100], 
-    lightness: [50, 70],
-    words: ['energetic', 'dynamic', 'vibrant', 'lively', 'bold']
-  },
   dull: { 
     hue: [210, 240], 
     saturation: [5, 20], 
@@ -24,19 +12,44 @@ let conceptHSLRanges = {
     lightness: [60, 80],
     words: ['radiant', 'luminous', 'vivid', 'brilliant', 'fresh']
   },
-  cold: { 
+  wet: {
     hue: [180, 220], 
-    saturation: [50, 80], 
-    lightness: [60, 80],
-    words: ['icy', 'frost', 'winter', 'crisp', 'arctic']
+    saturation: [40, 80], 
+    lightness: [50, 80],
+    words: ['rainy', 'soaked', 'oceanic', 'dewy', 'drenched']
   },
-  warm: { 
-    hue: [0, 40], 
-    saturation: [70, 100], 
+  dry: {
+    hue: [20, 50], 
+    saturation: [20, 60], 
+    lightness: [40, 75],
+    words: ['arid', 'parched', 'sunbaked', 'dusty', 'desert']
+  },
+  mild: { 
+    hue: [60, 100], 
+    saturation: [30, 50], 
+    lightness: [60, 80],
+    words: ['soft', 'gentle', 'balanced', 'moderate', 'calm']
+  },
+  acid: { 
+    hue: [70, 120], 
+    saturation: [80, 100], 
     lightness: [50, 70],
-    words: ['sunny', 'cozy', 'golden', 'autumn', 'ember']
+    words: ['tart', 'sharp', 'zesty', 'electric', 'vivid']
+  },
+  harsh: { 
+    hue: [0, 40], 
+    saturation: [70, 90], 
+    lightness: [30, 50],
+    words: ['intense', 'rough', 'abrasive', 'stark', 'blunt']
+  },
+  harmonious: { 
+    hue: [120, 360], 
+    saturation: [40, 50], 
+    lightness: [50, 70],
+    words: ['balanced', 'cohesive', 'unified', 'smooth', 'peaceful']
   }
 };
+
 
 let selectedConcepts = [];  // Stocke le concept choisi
 let palettes = [];         // Pour stocker les palettes générées
