@@ -184,9 +184,14 @@ function drawPalettes() {
 
 // Générer les 4 couleurs de palettes
 function generatePaletteColors() {
-  if (selectedConcepts.length === 0) {
-    return [color(0, 0, 0), color(0, 0, 0), 
-            color(0, 0, 0), color(0, 0, 0)]; // La palette par défaut est noire
+  if (selectedConcepts.length === 1) {
+    return Array(4).fill().map(() => generateHSLColor(selectedConcepts[0]));
+  } else if (selectedConcepts.length === 2) {
+    let colors1 = Array(2).fill().map(() => generateHSLColor(selectedConcepts[0]));
+    let colors2 = Array(2).fill().map(() => generateHSLColor(selectedConcepts[1]));
+    return shuffle([...colors1, ...colors2]);
+  } else {
+    return [color(255,255,255), color(255,255,255), color(255,255,255), color(255,255,255)]; // Blanc par défaut
   }
   
   if (selectedConcepts.length === 1) {
@@ -214,6 +219,7 @@ function generateHSLColor(concept) {
 // Générer une palette
 function drawPalette(palette) {
   const margin = palette.size * 0.15;
+
   for (let i = 0; i < 4; i++) {
     fill(palette.colors[i]);
     noStroke();
