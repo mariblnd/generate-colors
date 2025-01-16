@@ -40,20 +40,30 @@ let concept = {
 let selectedConcepts = [];  // Stocke le concept choisi
 let palettes = [];         // Pour stocker les palettes générées
 let music, click;          // Son
-let acid, dull, bright, wet, mild, harsh, harmonious, dry //sound effect
+
+let soundEffects = {
+  acid: null,
+  dull: null,
+  bright: null,
+  wet: null,
+  mild: null,
+  harsh: null,
+  harmonious: null,
+  dry: null
+};
 
 function preload() {
   music = loadSound("sound/background-sound.mp3");
   click = loadSound("sound/click.mp3");
 
-  acid = loadSound("sound/acid.mp3");
-  bright = loadSound("sound/bright.mp3");
-  dry = loadSound("sound/dry.mp3");
-  dull = loadSound("sound/dull.mp3");
-  harmonious = loadSound("sound/harmonious.mp3");
-  harsh = loadSound("sound/harsh.mp3");
-  mild = loadSound("sound/mild.mp3");
-  wet = loadSound("sound/wet.mp3");
+  soundEffects.acid = loadSound("sound/acid.mp3");
+  soundEffects.bright = loadSound("sound/bright.mp3");
+  soundEffects.dry = loadSound("sound/dry.mp3");
+  soundEffects.dull = loadSound("sound/dull.mp3");
+  soundEffects.harmonious = loadSound("sound/harmonious.mp3");
+  soundEffects.harsh = loadSound("sound/harsh.mp3");
+  soundEffects.mild = loadSound("sound/mild.mp3");
+  soundEffects.wet = loadSound("sound/wet.mp3");
 
 }
 function setup() {
@@ -117,8 +127,8 @@ function setupUI() {
 function handleCheckboxChange(conceptKey, isChecked) {
   if (isChecked) {
     // Jouer le son correspondant au concept
-    if (window[conceptKey]) {  // vérifie si la variable du son existe
-      window[conceptKey].play();
+    if (soundEffects[conceptKey]) {  // vérifie si le son existe dans notre objet
+      soundEffects[conceptKey].play();
     }
     addConcept(conceptKey);
   } else {
