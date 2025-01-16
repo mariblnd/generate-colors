@@ -40,12 +40,22 @@ let concept = {
 let selectedConcepts = [];  // Stocke le concept choisi
 let palettes = [];         // Pour stocker les palettes générées
 let music, click;          // Son
+let acid, dull, bright, wet, mild, harsh, harmonious, dry //sound effect
 
 function preload() {
   music = loadSound("sound/background-sound.mp3");
   click = loadSound("sound/click.mp3");
-}
 
+  acid = loadSound("sound/acid.mp3");
+  bright = loadSound("sound/bright.mp3");
+  dry = loadSound("sound/dry.mp3");
+  dull = loadSound("sound/dull.mp3");
+  harmonious = loadSound("sound/harmonious.mp3");
+  harsh = loadSound("sound/harsh.mp3");
+  mild = loadSound("sound/mild.mp3");
+  wet = loadSound("sound/wet.mp3");
+
+}
 function setup() {
   setupMusic();
   createCanvas(4800, 400);
