@@ -116,6 +116,10 @@ function setupUI() {
 // Gérer la sélection ou déselection des concepts
 function handleCheckboxChange(conceptKey, isChecked) {
   if (isChecked) {
+    // Jouer le son correspondant au concept
+    if (window[conceptKey]) {  // vérifie si la variable du son existe
+      window[conceptKey].play();
+    }
     addConcept(conceptKey);
   } else {
     removeConcept(conceptKey);
