@@ -125,7 +125,7 @@ function preload() {
 }
 function setup() {
   setupMusic();
-  createCanvas(5600, 400);
+  createCanvas(5600, 300);
   setupUI();
   drawPalettes();
 }
