@@ -280,7 +280,7 @@ function createWordsHTML(words) {
 // Générer les palettes
 function drawPalettes() {
   palettes = [];
-  const rectSize = 250;
+  const rectSize = 200;
   const gap = 30;
   const xStart = 0;
   const yCenter = height / 2 - rectSize / 2;
