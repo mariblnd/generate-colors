@@ -106,7 +106,7 @@ main h1 {
 }
 
 canvas {
-  margin : 13em 0;
+  margin : 2em 0;
   display: block;
 }
 
@@ -131,5 +131,9 @@ canvas {
 #words-container {
   margin-top: 3em;
   width: 100%;
+}
+
+#return {
+  padding:1em;
 }
   
