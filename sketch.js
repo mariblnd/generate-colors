@@ -238,28 +238,34 @@ function drawPalettes() {
   palettes.forEach(drawPalette);
 }
 
+// Obtenir une couleur aléatoire basée sur un concept, sans répéter les couleurs dans la palette
+function getRandomColor(conceptKey, usedColors) {
+  const colors = concept[conceptKey]?.color || [];
+  const availableColors = colors.filter(c => !usedColors.has(c)); // Exclure les couleurs déjà utilisées
+
+  if (availableColors.length === 0) {
+    return color(255, 255, 255); // Retourne blanc si toutes les couleurs ont été utilisées
+  }
+
+  const randomIndex = Math.floor(Math.random() * availableColors.length);
+  const hex = availableColors[randomIndex];
+  usedColors.add(hex); // Marquer la couleur comme utilisée
+  return color(...hexToRGB(hex));
+}
+
 // Générer les 4 couleurs de palettes
 function generatePaletteColors() {
+  const usedColors = new Set(); // Conserve les couleurs déjà utilisées dans cette palette
+
   if (selectedConcepts.length === 1) {
-    return Array(4).fill().map(() => getRandomColor(selectedConcepts[0]));
+    return Array(4).fill().map(() => getRandomColor(selectedConcepts[0], usedColors));
   } else if (selectedConcepts.length === 2) {
-    let colors1 = Array(2).fill().map(() => getRandomColor(selectedConcepts[0]));
-    let colors2 = Array(2).fill().map(() => getRandomColor(selectedConcepts[1]));
+    let colors1 = Array(2).fill().map(() => getRandomColor(selectedConcepts[0], usedColors));
+    let colors2 = Array(2).fill().map(() => getRandomColor(selectedConcepts[1], usedColors));
     return shuffle([...colors1, ...colors2]);
   } else {
     return [color(255, 255, 255), color(255, 255, 255), color(255, 255, 255), color(255, 255, 255)]; // Blanc par défaut
   }
-}
-
-// Obtenir une couleur aléatoire basée sur un concept
-function getRandomColor(conceptKey) {
-  const colors = concept[conceptKey]?.color || [];
-  if (colors.length === 0) {
-    return color(255, 255, 255); // Retourne blanc si aucune couleur n'est définie
-  }
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  const hex = colors[randomIndex];
-  return color(...hexToRGB(hex));
 }
 
 // Convertir un code hexadécimal en valeurs RGB
