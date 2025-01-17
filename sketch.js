@@ -1,40 +1,96 @@
 // Nous stockons les concepts ainsi que leurs couleurs & termes associés
+
 let concept = {
   dull: { 
-    color: ["#FCDEBE","#D4D2A5","#928779","#5e5768","#595959","#808f85","#91c499","#f2e9dc","#3f3f3f","#d6d6b1","#494331","#878472","#fcf7ff","#c4cad0","#878c8f","#a4969b","#718699","#554640","#a9bdc9","#87919E"],
-    words: ["'The gray sea and the long black land' - Robert Browning"]
+    color: [
+      "#FCDEBE", "#D4D2A5", "#928779", "#5e5768", "#595959", 
+      "#808f85", "#91c499", "#f2e9dc", "#3f3f3f", "#d6d6b1", 
+      "#494331", "#878472", "#fcf7ff", "#c4cad0", "#878c8f", 
+      "#a4969b", "#718699", "#554640", "#a9bdc9", "#87919E"
+    ],
+    words: [
+      "'The night is only a sort of carbon paper, Blueblack, with the much-poked periods of stars Letting in the light, peephole after peephole... A bonewhite light, like death, behind all things. Under the eyes of the stars and the moon's rictus He suffers his desert pillow, sleeplessness Stretching its fine, irritating sand in all directions.' - Sylvia Plath, *Insomniac*"
+    ]
   },
   bright: { 
-    color: ["#2461bd","#f6ff4d","#fada4b","#e6af2e","#07beb8","#3dccc7","#68d8d6","#9ceaef","#ffb68f","#ef5d60","#ec4067","#a01a7d","#fb8b24","#d90368","#eb00b8","#be05e8","#f57a9f","#dfb2f4","#f5e960","#f2f5ff"],
-    words: ["'And now I see with eye serene' - William Wordsworth"]
+    color: [
+      "#2461bd", "#f6ff4d", "#fada4b", "#e6af2e", "#07beb8", 
+      "#3dccc7", "#68d8d6", "#9ceaef", "#ffb68f", "#ef5d60", 
+      "#ec4067", "#a01a7d", "#fb8b24", "#d90368", "#eb00b8", 
+      "#be05e8", "#f57a9f", "#dfb2f4", "#f5e960", "#f2f5ff"
+    ],
+    words: [
+      "'Let my love, like sunlight, surround you and yet give you illumined freedom.' - Rabindranath Tagore, *Fireflies*"
+    ]
   },
   wet: {
-    color: ["#76C7C5", "#5DADEC", "#367BA9", "#B0E3F0", "#A8DADC", "#457B9D", "#1D3557", "#73A9AD", "#005377", "#1CA4D1", "#4EA6D6", "#89D0EF", "#7EC4CF", "#318CE7", "#28669C", "#6192E7", "#2B6DA6", "#A3D8F4", "#6AA5B4", "#5BC0EB"],
-    words: ["'Water, water, everywhere' - Samuel Taylor Coleridge"]
+    color: [
+      "#76C7C5", "#5DADEC", "#367BA9", "#B0E3F0", "#A8DADC", 
+      "#457B9D", "#1D3557", "#73A9AD", "#005377", "#1CA4D1", 
+      "#4EA6D6", "#89D0EF", "#7EC4CF", "#318CE7", "#28669C", 
+      "#6192E7", "#2B6DA6", "#A3D8F4", "#6AA5B4", "#5BC0EB"
+    ],
+    words: [
+      "'Rain, midnight rain, nothing but the wild rain On this bleak hut, and solitude, and me Remembering again that I shall die.' - Edward Thomas, *Rain*"
+    ]
   },
   dry: {
-    color: ["#EDC9AF", "#D2B48C", "#C19A6B", "#E5AA70", "#FFD59A", "#C68642", "#B88A76", "#F4A460", "#D8BFD8", "#8B7355", "#DAA520", "#BC8F8F", "#BDB76B", "#E4D2A0", "#C2B280", "#AD8A56", "#F4EBC1", "#BEA17D", "#E6CEAC", "#D9C2AA"],
-    words: ["'The parched earth yields no grain' - Anonymous"]
+    color: [
+      "#EDC9AF", "#D2B48C", "#C19A6B", "#E5AA70", "#FFD59A", 
+      "#C68642", "#B88A76", "#F4A460", "#D8BFD8", "#8B7355", 
+      "#DAA520", "#BC8F8F", "#BDB76B", "#E4D2A0", "#C2B280", 
+      "#AD8A56", "#F4EBC1", "#BEA17D", "#E6CEAC", "#D9C2AA"
+    ],
+    words: [
+      "'A handful of red sand, from the hot clime Of Arab deserts brought, Within this glass becomes the spy of Time, The minister of Thought.' - Henry Wadsworth Longfellow, *Sand of the Desert in an Hour-Glass*"
+    ]
   },
-  
   mild: { 
-    color: ["#8d6a9f","#c5cbd3","#8cbcb9","#dda448","#e1ca96","#aca885","#918b76","#626c66","#acadbc","#9b9ece","#6665dd","#5d3cef","#c6878f","#b79d94","#969696","#67697c","#8da1b9","#95adb6","#cbb3bf","#dbc7be"],
-    words: ["'And miles to go before I sleep' - Robert Frost"]
+    color: [
+      "#8d6a9f", "#c5cbd3", "#8cbcb9", "#dda448", "#e1ca96", 
+      "#aca885", "#918b76", "#626c66", "#acadbc", "#9b9ece", 
+      "#6665dd", "#5d3cef", "#c6878f", "#b79d94", "#969696", 
+      "#67697c", "#8da1b9", "#95adb6", "#cbb3bf", "#dbc7be"
+    ],
+    words: [
+      "'It’s found we see. What? – Eternity. It’s the sun, free To flow with the sea.' - Arthur Rimbaud, *Eternity*"
+    ]
   },
   acid: { 
-    color: ["#DFFF00", "#FFBF00", "#FF4500","#ADFF2F", "#7FFF00", "#32CD32","#8B0000", "#FFD700", "#FFFF00", "#EE82EE", "#FF69B4", "#FF1493", "#00FF7F", "#7CFC00", "#FF6347", "#DC143C",  "#00FF00",  "#FF00FF", "#FFA500","#FF007F"],
-    words: ["'I burn, I freeze; I am never warm' - Sylvia Plath"]
+    color: [
+      "#DFFF00", "#FFBF00", "#FF4500", "#ADFF2F", "#7FFF00", 
+      "#32CD32", "#8B0000", "#FFD700", "#FFFF00", "#EE82EE", 
+      "#FF69B4", "#FF1493", "#00FF7F", "#7CFC00", "#FF6347", 
+      "#DC143C", "#00FF00", "#FF00FF", "#FFA500", "#FF007F"
+    ],
+    words: [
+      "'A langorous island, where Nature abounds With exotic trees and luscious fruit; And with men whose bodies are slim and astute, And with women whose frankness delights and astounds.' - Charles Baudelaire, *Exotic Perfume*"
+    ]
   },
   harsh: { 
-    color: ["#4A4E69", "#22223B", "#9A031E", "#5F0A87", "#A5110B", "#D00000", "#E63946", "#FF6B6B", "#282828", "#910F4E", "#FF3E41", "#A83232", "#663399", "#C53030", "#E74C3C", "#B80F0A", "#FF9B42", "#A32929", "#B22222", "#7A0000"],
-    words: ["'But I have promises to keep' - Robert Frost"]
+    color: [
+      "#4A4E69", "#22223B", "#9A031E", "#5F0A87", "#A5110B", 
+      "#D00000", "#E63946", "#FF6B6B", "#282828", "#910F4E", 
+      "#FF3E41", "#A83232", "#663399", "#C53030", "#E74C3C", 
+      "#B80F0A", "#FF9B42", "#A32929", "#B22222", "#7A0000"
+    ],
+    words: [
+      "'You may shoot me with your words, You may cut me with your eyes, You may kill me with your hatefulness, But still, like air, I'll rise.' - Maya Angelou, *Still I Rise*"
+    ]
   },
-  
   harmonious: { 
-    color: ["#5CDB95", "#FFD166", "#EF476F", "#118AB2", "#06D6A0", "#D4A5A5", "#FFADAD", "#FFC3A0", "#83C5BE", "#FF6B6B", "#FFE66D", "#91EAE4", "#F5CAC3", "#D3E0EA", "#D0F4DE", "#A2D2FF", "#B6D7A8", "#FFD700", "#99C1DE", "#9BC1BC"],
-    words: ["'I wandered lonely as a cloud' - William Wordsworth"]
+    color: [
+      "#5CDB95", "#FFD166", "#EF476F", "#118AB2", "#06D6A0", 
+      "#D4A5A5", "#FFADAD", "#FFC3A0", "#83C5BE", "#FF6B6B", 
+      "#FFE66D", "#91EAE4", "#F5CAC3", "#D3E0EA", "#D0F4DE", 
+      "#A2D2FF", "#B6D7A8", "#FFD700", "#99C1DE", "#9BC1BC"
+    ],
+    words: [
+      "'The flowers evaporate like an incense urn, The viol vibrates like the wailing of souls that repine. A melancholy waltz—and a drowsiness divine, The skies like a mosque are beautiful and stern.' - Charles Baudelaire, *Evening Harmony*"
+    ]
   }
 };
+
 
 
 let selectedConcepts = [];  // Stocke le concept choisi
