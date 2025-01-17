@@ -102,11 +102,34 @@ main {
 
 main h1 {
   font-size:5rem;
-  margin:0;
+  margin: 0;
 }
 
 canvas {
-  margin : 2em 0;
+  margin : 13em 0;
   display: block;
+}
+
+#select-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.category-section h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.2em;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+#words-container {
+  margin-top: 3em;
+  width: 100%;
 }
   

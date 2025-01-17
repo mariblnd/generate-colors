@@ -22,7 +22,7 @@ let concept = {
     words: ["'And miles to go before I sleep' - Robert Frost"]
   },
   acid: { 
-    color: ["#141115","#4c2b36","#8d6346","#ddf45b","#3b1f2b","#db162f","#dbdfac","#5f758e","#0000","#2e294e","#095c00","#80000f","#6e1717","#9c0000","#e30000","#1e1f1e","#2e294e","#c9307a","#a6f76f","#01fdf6"],
+    color: ["#DFFF00", "#FFBF00", "#FF4500","#ADFF2F", "#7FFF00", "#32CD32","#8B0000", "#FFD700", "#FFFF00", "#EE82EE", "#FF69B4", "#FF1493", "#00FF7F", "#7CFC00", "#FF6347", "#DC143C",  "#00FF00",  "#FF00FF", "#FFA500","#FF007F"],
     words: ["'I burn, I freeze; I am never warm' - Sylvia Plath"]
   },
   harsh: { 
@@ -68,7 +68,7 @@ function preload() {
 }
 function setup() {
   setupMusic();
-  createCanvas(4800, 400);
+  createCanvas(5600, 400);
   setupUI();
   drawPalettes();
 }
@@ -84,11 +84,21 @@ function setupMusic() {
   });
 }
 
-// Pour l'interface
 function setupUI() {
-  const selectContainer = document.getElementById("select-container");
+  const mainContainer = createElement('div');
+  mainContainer.id('main-container');
+  mainContainer.parent('select-container');
   
-  // Create category headers and checkboxes
+  const selectContainer = createElement('div');
+  selectContainer.id('concepts-container');
+  selectContainer.style('display', 'flex');
+  selectContainer.style('flex-direction', 'row');
+  selectContainer.style('gap', '2em');
+  selectContainer.style('align-items', 'flex-start');
+  selectContainer.style('flex-wrap', 'nowrap');
+  selectContainer.parent(mainContainer);
+  
+  // Categories and their concepts
   const categories = {
     'Climate': ['dull', 'bright'],
     'Temperature': ['wet', 'dry'],
@@ -96,19 +106,21 @@ function setupUI() {
     'Sound': ['harsh', 'harmonious']
   };
   
-  // Words container for the associated quotes
-  const wordsContainer = createElement('div');
-  wordsContainer.id('words-container');
-  wordsContainer.style('margin', '1em 0');
-  wordsContainer.parent(selectContainer);
-
   // Create sections for each category
   Object.entries(categories).forEach(([category, concepts]) => {
+    // Create category section container
+    const categorySection = createElement('div');
+    categorySection.class('category-section');
+    categorySection.parent(selectContainer);
+    
     // Add category title
     const categoryTitle = createElement('h3', category);
-    categoryTitle.style('margin-top', '1em');
-    categoryTitle.style('margin-bottom', '0.5em');
-    categoryTitle.parent(selectContainer);
+    categoryTitle.parent(categorySection);
+    
+    // Create checkbox container
+    const checkboxContainer = createElement('div');
+    checkboxContainer.class('checkbox-container');
+    checkboxContainer.parent(categorySection);
     
     // Add checkboxes for the category
     concepts.forEach(conceptKey => {
@@ -116,11 +128,16 @@ function setupUI() {
         conceptKey.charAt(0).toUpperCase() + conceptKey.slice(1),
         false
       );
-      checkbox.parent(selectContainer);
-      checkbox.style('margin-right', '1em');
+      checkbox.parent(checkboxContainer);
       checkbox.changed(() => handleCheckboxChange(conceptKey, checkbox.checked()));
     });
   });
+
+  // Words container for the associated quotes - now inside mainContainer
+  const wordsContainer = createElement('div');
+  wordsContainer.id('words-container');
+  wordsContainer.style('margin-top', '1em');
+  wordsContainer.parent(mainContainer);
 }
 
 // Gérer la sélection ou déselection des concepts
@@ -206,7 +223,7 @@ function createWordsHTML(words) {
 // Générer les palettes
 function drawPalettes() {
   palettes = [];
-  const rectSize = 200;
+  const rectSize = 250;
   const gap = 30;
   const xStart = 0;
   const yCenter = height / 2 - rectSize / 2;
