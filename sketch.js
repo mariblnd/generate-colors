@@ -9,7 +9,7 @@ let concept = {
       "#a4969b", "#718699", "#554640", "#a9bdc9", "#87919E"
     ],
     words: [
-      "'The night is only a sort of carbon paper, Blueblack, with the much-poked periods of stars Letting in the light, peephole after peephole... A bonewhite light, like death, behind all things. Under the eyes of the stars and the moon's rictus He suffers his desert pillow, sleeplessness Stretching its fine, irritating sand in all directions.' - Sylvia Plath, *Insomniac*"
+      "“The night is only a sort of carbon paper, Blueblack, with the much-poked periods of stars Letting in the light, peephole after peephole... A bonewhite light, like death, behind all things. Under the eyes of the stars and the moon's rictus He suffers his desert pillow, sleeplessness Stretching its fine, irritating sand in all directions.” — Insomniac by Sylvia Plath"
     ]
   },
   bright: { 
@@ -20,7 +20,7 @@ let concept = {
       "#be05e8", "#f57a9f", "#dfb2f4", "#f5e960", "#f2f5ff"
     ],
     words: [
-      "'Let my love, like sunlight, surround you and yet give you illumined freedom.' - Rabindranath Tagore, *Fireflies*"
+      "“Let my love, like sunlight, surround you and yet give you illumined freedom.” — Fireflies by Rabindranath Tagore"
     ]
   },
   wet: {
@@ -31,7 +31,7 @@ let concept = {
       "#6192E7", "#2B6DA6", "#A3D8F4", "#6AA5B4", "#5BC0EB"
     ],
     words: [
-      "'Rain, midnight rain, nothing but the wild rain On this bleak hut, and solitude, and me Remembering again that I shall die.' - Edward Thomas, *Rain*"
+      "“Rain, midnight rain, nothing but the wild rain On this bleak hut, and solitude, and me Remembering again that I shall die.” — Rain by Edward Thomas"
     ]
   },
   dry: {
@@ -42,7 +42,7 @@ let concept = {
       "#AD8A56", "#F4EBC1", "#BEA17D", "#E6CEAC", "#D9C2AA"
     ],
     words: [
-      "'A handful of red sand, from the hot clime Of Arab deserts brought, Within this glass becomes the spy of Time, The minister of Thought.' - Henry Wadsworth Longfellow, *Sand of the Desert in an Hour-Glass*"
+      "“A handful of red sand, from the hot clime Of Arab deserts brought, Within this glass becomes the spy of Time, The minister of Thought.” — Sand of the Desert in an Hour-Glass by Henry Wadsworth Longfellow"
     ]
   },
   mild: { 
@@ -53,7 +53,7 @@ let concept = {
       "#67697c", "#8da1b9", "#95adb6", "#cbb3bf", "#dbc7be"
     ],
     words: [
-      "'It’s found we see. What? – Eternity. It’s the sun, free To flow with the sea.' - Arthur Rimbaud, *Eternity*"
+      "“It’s found we see. What? – Eternity. It’s the sun, free To flow with the sea.” — Eternity by Arthur Rimbaud"
     ]
   },
   acid: { 
@@ -64,7 +64,7 @@ let concept = {
       "#DC143C", "#00FF00", "#FF00FF", "#FFA500", "#FF007F"
     ],
     words: [
-      "'A langorous island, where Nature abounds With exotic trees and luscious fruit; And with men whose bodies are slim and astute, And with women whose frankness delights and astounds.' - Charles Baudelaire, *Exotic Perfume*"
+      "“A langorous island, where Nature abounds With exotic trees and luscious fruit; And with men whose bodies are slim and astute, And with women whose frankness delights and astounds.” — Exotic Perfume by Baudelaire"
     ]
   },
   harsh: { 
@@ -75,7 +75,7 @@ let concept = {
       "#B80F0A", "#FF9B42", "#A32929", "#B22222", "#7A0000"
     ],
     words: [
-      "'You may shoot me with your words, You may cut me with your eyes, You may kill me with your hatefulness, But still, like air, I'll rise.' - Maya Angelou, *Still I Rise*"
+      "“You may shoot me with your words, You may cut me with your eyes, You may kill me with your hatefulness, But still, like air, I'll rise.” — Still I Rise by Maya Angelou"
     ]
   },
   harmonious: { 
@@ -86,10 +86,11 @@ let concept = {
       "#A2D2FF", "#B6D7A8", "#FFD700", "#99C1DE", "#9BC1BC"
     ],
     words: [
-      "'The flowers evaporate like an incense urn, The viol vibrates like the wailing of souls that repine. A melancholy waltz—and a drowsiness divine, The skies like a mosque are beautiful and stern.' - Charles Baudelaire, *Evening Harmony*"
+      "“The flowers evaporate like an incense urn, The viol vibrates like the wailing of souls that repine. A melancholy waltz—and a drowsiness divine, The skies like a mosque are beautiful and stern.” — *Evening Harmony* de Baudelaire"
     ]
   }
 };
+
 
 
 
@@ -266,7 +267,7 @@ function createWordsHTML(words) {
         ${words.map(word => `
           <span style="
             background-color: #f0f0f0;
-            padding: 0.3em 0.8em;
+            padding: 1em;
             border-radius: 1em;
             font-size: 0.9em;
           ">${word}</span>
